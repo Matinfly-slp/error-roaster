@@ -3,9 +3,6 @@ name: Publish Error Roaster
 on:
   workflow_dispatch:
 
-permissions:
-  contents: read
-
 jobs:
   publish:
     runs-on: ubuntu-latest
@@ -25,4 +22,4 @@ jobs:
         run: npm install --no-package-lock
 
       - name: Publish to Visual Studio Marketplace
-        run: npx @vscode/vsce publish --no-dependencies --oidc
+        run: npx @vscode/vsce publish --oidc
