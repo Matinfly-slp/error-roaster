@@ -3,7 +3,7 @@
   "displayName": "Error Roaster",
   "description": "Roasts failed terminal commands and tasks by playing a funny reaction video in a floating Windows window.",
   "version": "1.0.0",
-  "publisher": "Matinfly-slp",
+  "publisher": "matinfly-VS",
   "engines": {
     "vscode": "^1.93.0"
   },
@@ -70,6 +70,6 @@
     "@types/node": "^20.14.0",
     "@types/vscode": "^1.93.0",
     "typescript": "^5.5.0",
-    "@vscode/vsce": "^3.0.0"
+    "@vscode/vsce": "^4.0.2"
   }
 }
