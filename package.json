@@ -1,0 +1,75 @@
+{
+  "name": "error-roaster",
+  "displayName": "Error Roaster",
+  "description": "Roasts failed terminal commands and tasks by playing a funny reaction video in a floating Windows window.",
+  "version": "1.0.0",
+  "publisher": "Matinfly-slp",
+  "engines": {
+    "vscode": "^1.93.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "terminal",
+    "error",
+    "fun",
+    "roast",
+    "windows",
+    "reaction"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Matinfly-slp/error-roaster.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Matinfly-slp/error-roaster/issues"
+  },
+  "homepage": "https://github.com/Matinfly-slp/error-roaster#readme",
+  "license": "MIT",
+  "activationEvents": [
+    "onStartupFinished"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "errorRoaster.testReaction",
+        "title": "Error Roaster: Test Reaction Video"
+      }
+    ],
+    "configuration": {
+      "title": "Error Roaster",
+      "properties": {
+        "errorRoaster.cooldownSeconds": {
+          "type": "number",
+          "default": 30,
+          "minimum": 0,
+          "description": "Minimum seconds between automatic reaction videos. Manual test always bypasses this."
+        },
+        "errorRoaster.playOnTerminalFailure": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play the reaction video when a terminal command exits with a non-zero code."
+        },
+        "errorRoaster.playOnTaskFailure": {
+          "type": "boolean",
+          "default": true,
+          "description": "Play the reaction video when a VS Code task exits with a non-zero code."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "package": "vsce package --no-dependencies"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.93.0",
+    "typescript": "^5.5.0",
+    "@vscode/vsce": "^3.0.0"
+  }
+}
